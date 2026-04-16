@@ -167,3 +167,11 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,maven,intellij
+
+### log ###
+logs
+*.log
+
+### tomcat ###
+conf
+.smarttomcat

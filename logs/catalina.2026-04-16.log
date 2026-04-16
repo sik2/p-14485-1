@@ -228,3 +228,77 @@
 16-Apr-2026 14:35:38.611 정보 [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [/Users/sik2/project/grepp/aibe6/p-14485-1/conf/Catalina/localhost/ROOT.xml]의 배치가 [319] 밀리초 내에 완료되었습니다.
 16-Apr-2026 14:35:38.613 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
 16-Apr-2026 14:35:38.620 정보 [main] org.apache.catalina.startup.Catalina.start 서버가 [389] 밀리초 내에 시작되었습니다.
+16-Apr-2026 15:24:03.266 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.54
+16-Apr-2026 15:24:03.269 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Mar 30 2026 22:31:53 UTC
+16-Apr-2026 15:24:03.269 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.54.0
+16-Apr-2026 15:24:03.269 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Mac OS X
+16-Apr-2026 15:24:03.270 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     26.3.1
+16-Apr-2026 15:24:03.270 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          aarch64
+16-Apr-2026 15:24:03.270 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /Users/sik2/Library/Java/JavaVirtualMachines/corretto-21.0.8/Contents/Home
+16-Apr-2026 15:24:03.270 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          21.0.8+9-LTS
+16-Apr-2026 15:24:03.270 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Amazon.com Inc.
+16-Apr-2026 15:24:03.270 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /Users/sik2/project/grepp/aibe6/p-14485-1
+16-Apr-2026 15:24:03.270 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /Users/sik2/project/grepp/aibe6/tomcat/apache-tomcat-10.1.54
+16-Apr-2026 15:24:03.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Apr-2026 15:24:03.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+16-Apr-2026 15:24:03.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+16-Apr-2026 15:24:03.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Apr-2026 15:24:03.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Apr-2026 15:24:03.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/Users/sik2/project/grepp/aibe6/tomcat/apache-tomcat-10.1.54
+16-Apr-2026 15:24:03.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/Users/sik2/project/grepp/aibe6/p-14485-1
+16-Apr-2026 15:24:03.277 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/Users/sik2/project/grepp/aibe6/p-14485-1/temp
+16-Apr-2026 15:24:03.277 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/Users/sik2/project/grepp/aibe6/p-14485-1/conf/logging.properties
+16-Apr-2026 15:24:03.277 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Apr-2026 15:24:03.277 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=64923
+16-Apr-2026 15:24:03.277 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+16-Apr-2026 15:24:03.277 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dsun.stdout.encoding=UTF-8
+16-Apr-2026 15:24:03.277 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dsun.stderr.encoding=UTF-8
+16-Apr-2026 15:24:03.284 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/Users/sik2/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+16-Apr-2026 15:24:03.527 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+16-Apr-2026 15:24:03.547 정보 [main] org.apache.catalina.startup.Catalina.load [412] 밀리초 내에 서버가 초기화되었습니다.
+16-Apr-2026 15:24:03.597 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+16-Apr-2026 15:24:03.597 정보 [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.54]
+16-Apr-2026 15:24:03.609 정보 [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [/Users/sik2/project/grepp/aibe6/p-14485-1/conf/Catalina/localhost/ROOT.xml]을(를) 배치합니다.
+16-Apr-2026 15:24:03.894 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+16-Apr-2026 15:24:03.920 정보 [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [/Users/sik2/project/grepp/aibe6/p-14485-1/conf/Catalina/localhost/ROOT.xml]의 배치가 [308] 밀리초 내에 완료되었습니다.
+16-Apr-2026 15:24:03.923 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+16-Apr-2026 15:24:03.930 정보 [main] org.apache.catalina.startup.Catalina.start 서버가 [382] 밀리초 내에 시작되었습니다.
+16-Apr-2026 15:24:05.208 정보 [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8080"]을(를) 일시 정지 중
+16-Apr-2026 15:24:05.211 정보 [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+16-Apr-2026 15:24:05.219 정보 [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
+16-Apr-2026 15:24:05.222 정보 [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.
+16-Apr-2026 15:24:06.260 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.54
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Mar 30 2026 22:31:53 UTC
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.54.0
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Mac OS X
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     26.3.1
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          aarch64
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /Users/sik2/Library/Java/JavaVirtualMachines/corretto-21.0.8/Contents/Home
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          21.0.8+9-LTS
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Amazon.com Inc.
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /Users/sik2/project/grepp/aibe6/p-14485-1
+16-Apr-2026 15:24:06.264 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /Users/sik2/project/grepp/aibe6/tomcat/apache-tomcat-10.1.54
+16-Apr-2026 15:24:06.275 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Apr-2026 15:24:06.275 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+16-Apr-2026 15:24:06.275 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+16-Apr-2026 15:24:06.275 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Apr-2026 15:24:06.275 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Apr-2026 15:24:06.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/Users/sik2/project/grepp/aibe6/tomcat/apache-tomcat-10.1.54
+16-Apr-2026 15:24:06.276 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/Users/sik2/project/grepp/aibe6/p-14485-1
+16-Apr-2026 15:24:06.279 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/Users/sik2/project/grepp/aibe6/p-14485-1/temp
+16-Apr-2026 15:24:06.279 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/Users/sik2/project/grepp/aibe6/p-14485-1/conf/logging.properties
+16-Apr-2026 15:24:06.279 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Apr-2026 15:24:06.279 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=64927
+16-Apr-2026 15:24:06.279 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+16-Apr-2026 15:24:06.279 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dsun.stdout.encoding=UTF-8
+16-Apr-2026 15:24:06.279 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dsun.stderr.encoding=UTF-8
+16-Apr-2026 15:24:06.290 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/Users/sik2/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+16-Apr-2026 15:24:06.659 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+16-Apr-2026 15:24:06.675 정보 [main] org.apache.catalina.startup.Catalina.load [638] 밀리초 내에 서버가 초기화되었습니다.
+16-Apr-2026 15:24:06.722 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+16-Apr-2026 15:24:06.723 정보 [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.54]
+16-Apr-2026 15:24:06.734 정보 [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [/Users/sik2/project/grepp/aibe6/p-14485-1/conf/Catalina/localhost/ROOT.xml]을(를) 배치합니다.
+16-Apr-2026 15:24:07.010 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+16-Apr-2026 15:24:07.034 정보 [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [/Users/sik2/project/grepp/aibe6/p-14485-1/conf/Catalina/localhost/ROOT.xml]의 배치가 [296] 밀리초 내에 완료되었습니다.
+16-Apr-2026 15:24:07.042 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+16-Apr-2026 15:24:07.049 정보 [main] org.apache.catalina.startup.Catalina.start 서버가 [373] 밀리초 내에 시작되었습니다.
