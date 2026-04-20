@@ -20,4 +20,8 @@ public class ArticleService {
     public Article create(String title, String content) {
         return articleRepository.save(title, content);
     }
+
+    public Article findById(int id) {
+        return articleRepository.findById(id);
+    }
 }

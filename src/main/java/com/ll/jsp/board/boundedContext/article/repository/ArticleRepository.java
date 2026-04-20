@@ -36,4 +36,11 @@ public class ArticleRepository {
 
         return article;
     }
+
+    public Article findById(int id) {
+        return articleList.stream()
+                .filter(a -> a.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
 }

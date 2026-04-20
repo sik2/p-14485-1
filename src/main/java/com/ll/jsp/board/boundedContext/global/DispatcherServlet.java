@@ -33,6 +33,7 @@ public class DispatcherServlet extends HttpServlet {
                 switch (rq.getURIPath()) {
                     case "/usr/article/list" -> articleController.showList(rq);
                     case "/usr/article/write" -> articleController.showWrite(rq);
+                    case "/usr/article/detail" -> articleController.detail(rq);
                     case "/usr/member/join" -> memberController.showJoin(rq);
                 }
             }
