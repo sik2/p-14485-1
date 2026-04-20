@@ -61,10 +61,28 @@ public class ArticleController {
     public void detail(Rq rq) {
         int id = rq.getIntParam("id", 0);
 
+        if (id <= 0) {
+            rq.appendBody("""
+                    <script>
+                        alert('잘못된 접근입니다.');
+                        history.back();
+                    </script>
+                    """);
+            return;
+        }
+
         Article article = articleService.findById(id);
+        if (article == null) {
+            rq.appendBody("""
+                    <script>
+                        alert('게시글을 찾을 수 없습니다.');
+                        history.back();
+                    </script>
+                    """);
+            return;
+        }
 
         rq.setAttr("article", article);
-
         rq.view("/usr/article/detail");
     }
 }
