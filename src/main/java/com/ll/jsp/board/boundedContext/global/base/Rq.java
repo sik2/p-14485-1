@@ -85,4 +85,34 @@ public class Rq {
     public String getURIPath() {
         return req.getRequestURI();
     }
+
+    public String getActionPath() {
+        String[] bits = req.getRequestURI().split("/");
+
+        return "/%s/%s/%s".formatted(bits[1], bits[2], bits[3]);
+    }
+
+    public long getLongPathValueByIndex(int index, int defaultValue) {
+        String value = getPathValueByIndex(index, null);
+
+        if (value == null) {
+            return defaultValue;
+        }
+
+        try {
+            return Long.parseLong(value);
+        } catch (NumberFormatException e) {
+            return defaultValue;
+        }
+    }
+
+    public String getPathValueByIndex(int index, String defaultValue) {
+        // ["", "usr", "article", "detail", "1"]
+        String[] bits = req.getRequestURI().split("/");
+        try {
+            return bits[3 + index] ;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return defaultValue;
+        }
+    }
 }
