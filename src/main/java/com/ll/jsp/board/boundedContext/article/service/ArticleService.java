@@ -24,4 +24,8 @@ public class ArticleService {
     public Article findById(long id) {
         return articleRepository.findById(id);
     }
+
+    public void modify(long id, String title, String content) {
+        articleRepository.modify(id, title, content);
+    }
 }

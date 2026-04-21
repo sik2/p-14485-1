@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<script>
+    function articleSaveSubmitForm(form) {
+
+        if (form.title.value.trim().length == 0) {
+            alert("제목을 입력해주세요.");
+            form.title.focus();
+            return;
+        } else if (form.title.value.trim().length < 3) {
+            alert("제목은 두 글자 이상 적어주세요.");
+            form.title.focus();
+            return;
+        }
+
+        if (form.content.value.trim().length == 0) {
+            alert("내용을 입력해주세요.");
+            form.content.focus();
+            return;
+        }  else if (form.content.value.trim().length < 3) {
+            alert("내용은 두 글자 이상 적어주세요.");
+            form.content.focus();
+            return;
+        }
+
+        form.submit();
+    }
+</script>
+
+
+<div>
+    <h2>게시물 수정</h2>
+
+    <div>
+        <span>번호 : ${article.id}</span>
+    </div>
+
+    <form method="POST" action="/usr/article/modify/${article.id}" onSubmit="articleSaveSubmitForm(this); return false;">
+        <div>
+            <label for="title">제목</label>
+            <input type="text"
+                   id="title"
+                   name="title"
+                   placeholder="제목을 입력해주세요"
+                   value="${article.title}"
+                   required>
+        </div>
+
+        <div>
+            <label for="content">내용</label>
+            <textarea id="content"
+                      name="content"
+                      placeholder="내용을 입력해주세요"
+                      required>${article.content}</textarea>
+        </div>
+
+        <div>
+            <button type="submit" class="submit-btn">게시물 수정</button>
+            <button type="button" class="cancel-btn" onclick="history.back()">취소</button>
+        </div>
+    </form>
+</div>
