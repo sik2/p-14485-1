@@ -28,4 +28,8 @@ public class ArticleService {
     public void modify(long id, String title, String content) {
         articleRepository.modify(id, title, content);
     }
+
+    public void delete(Article article) {
+        articleRepository.delete(article);
+    }
 }

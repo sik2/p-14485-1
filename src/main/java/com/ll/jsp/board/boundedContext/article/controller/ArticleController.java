@@ -97,4 +97,22 @@ public class ArticleController {
         articleService.modify(id, title, content);
         rq.replace("%d번 게시물이 수정되었습니다.".formatted(id), "/usr/article/detail/%d".formatted(id));
     }
+
+    public void doDelete(Rq rq) {
+        long id = rq.getIntParam("deleteId", 0);
+
+        if (id <= 0) {
+            rq.historyBack("잘못된 접근입니다.");
+            return;
+        }
+
+       Article article = articleService.findById(id);
+        if (article == null) {
+            rq.replace("게시글을 찾을 수 없습니다.", "/usr/article/list");
+            return;
+        }
+        articleService.delete(article);
+
+        rq.replace("%d번 게시물이 삭제 되었습니다.".formatted(id), "/usr/article/list");
+    }
 }
