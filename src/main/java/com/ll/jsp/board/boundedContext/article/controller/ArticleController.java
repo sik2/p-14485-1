@@ -29,56 +29,31 @@ public class ArticleController {
     public void doWrite(Rq rq) {
         String title = rq.getParam("title", "");
         if (title.isBlank()) {
-            rq.appendBody("""
-                    <script>
-                        alert('제목을 입력해주세요.');
-                        history.back();
-                    </script>
-                    """);
+            rq.replace("제목을 입력해주세요.", "/usr/article/wrtie");
             return;
         }
         String content = rq.getParam("content", "");
         if (content.isBlank()) {
-            rq.appendBody("""
-                    <script>
-                        alert('제목을 입력해주세요.');
-                        history.back();
-                    </script>
-                    """);
+            rq.replace("내용을 입력해주세요.", "/usr/article/write");
             return;
         }
 
         Article article = articleService.create(title, content);
 
-        rq.appendBody("""
-                <div>%d 게시물 생성</div>
-                <div>제목 : %s</div>
-                <div>내용 : %s</div>
-                <a href="/usr/article/list">목록으로</a>
-                """.formatted(article.getId(), title, content));
+        rq.replace("%d 게시물이 작성되었습니다.".formatted(article.getId()), "/usr/article/detail/%d".formatted(article.getId()));
     }
 
     public void detail(Rq rq) {
         long id = rq.getLongPathValueByIndex(1, 0);
 
         if (id <= 0) {
-            rq.appendBody("""
-                    <script>
-                        alert('잘못된 접근입니다.');
-                        history.back();
-                    </script>
-                    """);
+            rq.historyBack("잘못된 접근입니다.");
             return;
         }
 
         Article article = articleService.findById(id);
         if (article == null) {
-            rq.appendBody("""
-                    <script>
-                        alert('게시글을 찾을 수 없습니다.');
-                        history.back();
-                    </script>
-                    """);
+            rq.replace("게시글을 찾을 수 없습니다.", "/usr/article/list");
             return;
         }
 
@@ -90,23 +65,13 @@ public class ArticleController {
         long id = rq.getLongPathValueByIndex(1, 0);
 
         if (id <= 0) {
-            rq.appendBody("""
-                    <script>
-                        alert('잘못된 접근입니다.');
-                        history.back();
-                    </script>
-                    """);
+            rq.historyBack("잘못된 접근입니다.");
             return;
         }
 
        Article article = articleService.findById(id);
         if (article == null) {
-            rq.appendBody("""
-                    <script>
-                        alert('게시글을 찾을 수 없습니다.');
-                        history.back();
-                    </script>
-                    """);
+            rq.replace("게시글을 찾을 수 없습니다.", "/usr/article/list");
             return;
         }
 
@@ -119,32 +84,17 @@ public class ArticleController {
 
         String title = rq.getParam("title", "");
         if (title.isBlank()) {
-            rq.appendBody("""
-                    <script>
-                        alert('제목을 입력해주세요.');
-                        history.back();
-                    </script>
-                    """);
+            rq.replace("제목을 입력해주세요.", "/usr/article/modify/%d".formatted(id));
             return;
         }
+
         String content = rq.getParam("content", "");
         if (content.isBlank()) {
-            rq.appendBody("""
-                    <script>
-                        alert('제목을 입력해주세요.');
-                        history.back();
-                    </script>
-                    """);
+            rq.replace("내용을 입력해주세요.", "/usr/article/modify/%d".formatted(id));
             return;
         }
 
         articleService.modify(id, title, content);
-
-        rq.appendBody("""
-                <div>%d 게시물 수정</div>
-                <div>제목 : %s</div>
-                <div>내용 : %s</div>
-                <a href="/usr/article/list">목록으로</a>
-                """.formatted(id, title, content));
+        rq.replace("%d번 게시물이 수정되었습니다.".formatted(id), "/usr/article/detail/%d".formatted(id));
     }
 }

@@ -49,12 +49,34 @@ public class Rq {
         return value;
     }
 
-    public void appendBody(String str) {
+    public void print(String str) {
         try {
             resp.getWriter().append(str);
         } catch (IOException e) {
             throw new RuntimeException("응답 작성 중 오류가 발생했습니다.", e);
         }
+    }
+
+    public void println(String str) {
+        print(str + "\n");
+    }
+
+    public void replace(String msg, String url) {
+        println("""
+                    <script>
+                        alert("%s");
+                        location.replace("%s")
+                    </script>
+                """.formatted(msg, url));
+    }
+
+    public void historyBack(String msg) {
+        println("""
+                    <script>
+                        alert("%s");
+                        history.back();
+                    </script>
+                """.formatted(msg));
     }
 
     public void view(String path) {
