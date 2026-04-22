@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<c:set var="isLoggedIn" value="${sessionScope.loggedInMember != null}" />
 <!doctype html>
 <html lang="ko">
 <head>
@@ -12,3 +13,17 @@
     <title>게시판</title>
 </head>
 <body>
+    <nav class="flex items-center gap-4">
+        <a href="/usr/article/list">게시판</a>
+        <c:if test="${isLoggedIn}" >
+            <div>${sessionScope.loggedInMember.username}님 반갑습니다.</div>
+            <a href="/usr/member/me">내정보</a>
+            <a href="/usr/member/logout">로그아웃</a>
+        </c:if>
+
+        <c:if test="${!isLoggedIn}" >
+            <div><a href="/usr/member/login">로그인</a></div>
+            <a href="/usr/member/join">회원가입</a>
+        </c:if>
+
+    </nav>
