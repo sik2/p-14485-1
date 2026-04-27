@@ -5,6 +5,7 @@ import com.ll.jsp.board.boundedContext.article.entity.Article;
 import com.ll.jsp.board.boundedContext.article.service.ArticleService;
 import com.ll.jsp.board.boundedContext.base.Container;
 import com.ll.jsp.board.boundedContext.global.base.Rq;
+import com.ll.jsp.board.boundedContext.member.dto.Member;
 
 import java.util.List;
 
@@ -28,6 +29,10 @@ public class ArticleController {
     }
 
     public void doWrite(Rq rq) {
+        if (rq.isLoggout()) {
+            rq.replace("게시글 작성은 로그인 후 가능합니다.", "/usr/article/list");
+        }
+
         String title = rq.getParam("title", "");
         if (title.isBlank()) {
             rq.replace("제목을 입력해주세요.", "/usr/article/wrtie");
@@ -39,7 +44,9 @@ public class ArticleController {
             return;
         }
 
-        long id = articleService.create(title, content);
+        Member member = rq.getLoginedMember();
+
+        long id = articleService.create(title, content, member);
 
         rq.replace("%d 게시물이 작성되었습니다.".formatted(id), "/usr/article/detail/%d".formatted(id));
     }
