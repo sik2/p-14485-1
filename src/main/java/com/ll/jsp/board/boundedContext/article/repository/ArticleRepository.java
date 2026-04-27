@@ -1,6 +1,7 @@
 package com.ll.jsp.board.boundedContext.article.repository;
 
-import com.ll.jsp.board.boundedContext.article.dto.Article;
+import com.ll.jsp.board.boundedContext.article.dto.ArticleDto;
+import com.ll.jsp.board.boundedContext.article.entity.Article;
 import com.ll.jsp.board.boundedContext.base.Container;
 import com.ll.jsp.board.db.DBConnection;
 
@@ -9,15 +10,14 @@ import java.util.List;
 import java.util.Map;
 
 public class ArticleRepository {
-    private List<Article> articleList;
-    DBConnection dbConnection;
+    private final DBConnection dbConnection;
 
     public ArticleRepository() {
         dbConnection = Container.dbConnection;
     }
 
     public List<Article> findAll() {
-        articleList = new ArrayList<>();
+        List<Article> articleList = new ArrayList<>();
         List<Map<String, Object>> rows = dbConnection.selectRows("select * from article");
 
         for (Map<String, Object> row : rows) {
@@ -27,6 +27,30 @@ public class ArticleRepository {
         }
 
         return articleList;
+    }
+
+    public List<ArticleDto> joinMemberFindAll() {
+        List<ArticleDto> articleDtoList = new ArrayList<>();
+
+        List<Map<String, Object>> rows = dbConnection.selectRows("""
+                SELECT
+                A.id,
+                A.title,
+                A.content,
+                M.username,
+                A.regDate
+                FROM `article` AS A
+                INNER JOIN `member` as M
+                on A.member_id = M.id
+                """);
+
+        for (Map<String, Object> row : rows) {
+            ArticleDto articleDto = new ArticleDto(row);
+
+            articleDtoList.add(articleDto);
+        }
+
+        return articleDtoList;
     }
 
     public long save(String title, String content) {

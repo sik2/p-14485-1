@@ -14,16 +14,18 @@ import java.util.Map;
 @Getter
 @Setter
 @ToString
-public class Article {
+public class ArticleDto {
     private long id;
     private String title;
     private String content;
+    private String author;
     private LocalDateTime regDate;
 
-    public Article(Map<String, Object> row) {
+    public ArticleDto(Map<String, Object> row) {
         this.id = ((BigInteger) row.get("id")).longValue();
         this.title = (String) row.get("title");
         this.content = (String) row.get("content");
+        this.author = (String) row.get("username");
         this.regDate = (LocalDateTime) row.get("regDate");
     }
 

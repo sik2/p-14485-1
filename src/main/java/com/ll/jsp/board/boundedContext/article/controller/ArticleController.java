@@ -1,6 +1,7 @@
 package com.ll.jsp.board.boundedContext.article.controller;
 
-import com.ll.jsp.board.boundedContext.article.dto.Article;
+import com.ll.jsp.board.boundedContext.article.dto.ArticleDto;
+import com.ll.jsp.board.boundedContext.article.entity.Article;
 import com.ll.jsp.board.boundedContext.article.service.ArticleService;
 import com.ll.jsp.board.boundedContext.base.Container;
 import com.ll.jsp.board.boundedContext.global.base.Rq;
@@ -16,9 +17,9 @@ public class ArticleController {
     }
 
     public void showList(Rq rq) {
-        List<Article> articleList = articleService.findAll();
+        List<ArticleDto> articleDtoList = articleService.joinMemberFindAll();
 
-        rq.setAttr("articleList", articleList);
+        rq.setAttr("articleDtoList", articleDtoList);
         rq.view("/usr/article/list");
     }
 
