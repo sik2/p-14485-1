@@ -26,6 +26,10 @@ public class ArticleService {
         return articleRepository.save(title, content);
     }
 
+    public ArticleDto joinMemberFindById(long id) {
+        return articleRepository.joinMemberFindById(id);
+    }
+
     public Article findById(long id) {
         return articleRepository.findById(id);
     }

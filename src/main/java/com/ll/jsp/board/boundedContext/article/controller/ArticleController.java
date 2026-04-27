@@ -52,13 +52,13 @@ public class ArticleController {
             return;
         }
 
-        Article article = articleService.findById(id);
-        if (article == null) {
+        ArticleDto articleDto = articleService.joinMemberFindById(id);
+        if (articleDto == null) {
             rq.replace("게시글을 찾을 수 없습니다.", "/usr/article/list");
             return;
         }
 
-        rq.setAttr("article", article);
+        rq.setAttr("articleDto", articleDto);
         rq.view("/usr/article/detail");
     }
 

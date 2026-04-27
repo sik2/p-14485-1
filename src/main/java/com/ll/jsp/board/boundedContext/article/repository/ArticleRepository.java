@@ -66,6 +66,23 @@ public class ArticleRepository {
         return id;
     }
 
+    public ArticleDto joinMemberFindById(long id) {
+        Map<String, Object> row = dbConnection.selectRow("""
+            SELECT 
+            A.id,
+            A.title,
+            A.content,
+            A.regDate,
+            M.username
+            FROM article AS A
+            INNER JOIN `member` AS M
+            ON A.member_id = M.id
+            WHERE A.id = %d
+        """.formatted(id));
+
+        return new ArticleDto(row);
+    }
+
     public Article findById(long id) {
         Map<String, Object> row = dbConnection.selectRow("select * from article where id = %d".formatted(id));
 
