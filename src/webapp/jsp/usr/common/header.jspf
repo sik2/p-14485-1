@@ -18,7 +18,8 @@
         <c:if test="${isLoggedIn}" >
             <div>${sessionScope.loggedInMember.username}님 반갑습니다.</div>
             <a href="/usr/member/me">내정보</a>
-            <a href="/usr/member/logout">로그아웃</a>
+            <a  id="logoutLinkBtn" href="#">로그아웃</a>
+            <form id="logoutForm" method="POST" action="/usr/member/logout"></form>
         </c:if>
 
         <c:if test="${!isLoggedIn}" >
@@ -27,3 +28,16 @@
         </c:if>
 
     </nav>
+    <script>
+        const logoutLinkBtn = document.getElementById("logoutLinkBtn");
+        const logoutForm = document.getElementById("logoutForm");
+
+        logoutLinkBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            if(confirm("로그아웃 하시겠습니까?")) {
+                logoutForm.submit(); // 폼 제출
+            }
+        })
+
+    </script>
