@@ -34,7 +34,8 @@ public class ArticleRepository {
                         """
                             INSERT INTO article
                             SET title = '%s',
-                            content='%s'
+                            content='%s',
+                            regDate=now()
                         """.formatted(title, content)
         );
 

@@ -16,7 +16,7 @@
     </div>
 
     <div>
-        <span>작성일 : 2025-00-00 00:00</span>
+        <span>작성일 : ${article.regDate}</span>
     </div>
 
     <div>
