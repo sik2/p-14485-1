@@ -17,7 +17,7 @@ public class ArticleService {
         return articleRepository.findAll();
     }
 
-    public Article create(String title, String content) {
+    public long create(String title, String content) {
         return articleRepository.save(title, content);
     }
 

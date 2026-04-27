@@ -38,9 +38,9 @@ public class ArticleController {
             return;
         }
 
-        Article article = articleService.create(title, content);
+        long id = articleService.create(title, content);
 
-        rq.replace("%d 게시물이 작성되었습니다.".formatted(article.getId()), "/usr/article/detail/%d".formatted(article.getId()));
+        rq.replace("%d 게시물이 작성되었습니다.".formatted(id), "/usr/article/detail/%d".formatted(id));
     }
 
     public void detail(Rq rq) {
