@@ -5,22 +5,28 @@ import com.ll.jsp.board.boundedContext.base.Container;
 import com.ll.jsp.board.db.DBConnection;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 public class ArticleRepository {
     private List<Article> articleList;
     DBConnection dbConnection;
 
     public ArticleRepository() {
-        articleList = new ArrayList<>();
         dbConnection = Container.dbConnection;
     }
 
     public List<Article> findAll() {
-        return articleList.stream()
-                .sorted((Comparator.comparing(Article::getId).reversed()))
-                .toList();
+        articleList = new ArrayList<>();
+        List<Map<String, Object>> rows = dbConnection.selectRows("select * from article");
+
+        for (Map<String, Object> row : rows) {
+            Article article = new Article(row);
+
+            articleList.add(article);
+        }
+
+        return articleList;
     }
 
     public long save(String title, String content) {
@@ -36,10 +42,9 @@ public class ArticleRepository {
     }
 
     public Article findById(long id) {
-        return articleList.stream()
-                .filter(a -> a.getId() == id)
-                .findFirst()
-                .orElse(null);
+        Map<String, Object> row = dbConnection.selectRow("select * from article where id = %d".formatted(id));
+
+        return new Article(row);
     }
 
     public void modify(long id, String title, String content) {
